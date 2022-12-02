@@ -39,7 +39,7 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: aezakme/demo-deploy
+          image: aezakme/conquer-bulgaria-deploy
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
