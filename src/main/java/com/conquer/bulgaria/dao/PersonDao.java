@@ -1,6 +1,6 @@
-package com.example.demo.dao;
+package com.conquer.bulgaria.dao;
 
-import com.example.demo.model.Person;
+import com.conquer.bulgaria.model.Person;
 
 import java.util.List;
 import java.util.Optional;

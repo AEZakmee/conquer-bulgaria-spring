@@ -1,6 +1,6 @@
-package com.example.demo.dao;
+package com.conquer.bulgaria.dao;
 
-import com.example.demo.model.Person;
+import com.conquer.bulgaria.model.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

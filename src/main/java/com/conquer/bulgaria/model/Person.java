@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.conquer.bulgaria.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
