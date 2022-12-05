@@ -1,4 +1,4 @@
-package com.conquer.bulgaria.dao;
+package com.conquer.bulgaria.dao.person;
 
 import com.conquer.bulgaria.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository("postgres")
+@Repository("personPostgres")
 public class PersonDataAccessService implements  PersonDao{
 
     private final JdbcTemplate jdbcTemplate;

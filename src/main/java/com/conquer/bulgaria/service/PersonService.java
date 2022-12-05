@@ -1,6 +1,6 @@
 package com.conquer.bulgaria.service;
 
-import com.conquer.bulgaria.dao.PersonDao;
+import com.conquer.bulgaria.dao.person.PersonDao;
 import com.conquer.bulgaria.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,7 +15,7 @@ public class PersonService {
     private  final PersonDao personDao;
 
     @Autowired
-    public PersonService(@Qualifier("postgres") PersonDao personDao) {
+    public PersonService(@Qualifier("personPostgres") PersonDao personDao) {
         this.personDao = personDao;
     }
 

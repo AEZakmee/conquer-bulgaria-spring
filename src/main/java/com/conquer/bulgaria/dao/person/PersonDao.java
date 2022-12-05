@@ -1,4 +1,4 @@
-package com.conquer.bulgaria.dao;
+package com.conquer.bulgaria.dao.person;
 
 import com.conquer.bulgaria.model.Person;
 
