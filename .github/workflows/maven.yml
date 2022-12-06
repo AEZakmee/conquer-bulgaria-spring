@@ -29,7 +29,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn package -DDB_USERNAME=${{ secrets.DB_USERNAME }} -DDB_PASSWORD=${{ secrets.DB_PASSWORD }} -DDB_URL=${{ secrets.DB_URL }}
+        run: mvn clean package -DDB_USERNAME=${{ secrets.DB_USERNAME }} -DDB_PASSWORD=${{ secrets.DB_PASSWORD }} -DDB_URL=${{ secrets.DB_URL }}
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
