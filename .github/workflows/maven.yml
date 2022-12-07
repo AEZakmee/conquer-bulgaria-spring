@@ -28,6 +28,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Adding database secret
+        run: |
+          printf ${{secrets.DATABASE_CONNECTION}} >> src/main/resources/application.yml
+        shell: bash
+
       - name: Build with Maven
         run: mvn clean install
 
