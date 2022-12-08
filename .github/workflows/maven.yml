@@ -28,9 +28,14 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Adding database secret
+      - name: Adding application configuration
         run: |
-          printf ${{secrets.DATABASE_CONNECTION}} >> src/main/resources/application.yml
+          printf ${{secrets.APPLICATION_YML}} >> src/main/resources/application.yml
+        shell: bash
+
+      - name: Adding firebase configuration
+        run: |
+          printf ${{secrets.FIREBASE_CONFIG}} >> src/main/resources/firebase_config.json
         shell: bash
 
       - name: Build with Maven
