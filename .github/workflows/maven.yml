@@ -34,8 +34,7 @@ jobs:
         shell: bash
 
       - name: Adding firebase json configuration
-        run: |
-          echo -e '${{ secrets.FIREBASE_CONFIG }}' >> src/main/resources/firebase_config.json
+        run: echo "${{ secrets.FIREBASE_CONFIG }}" | base64 -d > src/main/resources/firebase_config.json
 
       - name: Build with Maven
         run: mvn clean install
