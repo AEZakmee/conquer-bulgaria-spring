@@ -5,33 +5,18 @@ create the database -> CREATE DATABASE demodb
 -> \l to list databses
 -> connect to databse \c demodb
 -> \d for tables
--> \d person
+-> \d sometable
 
 To have uuid functionality add to database -> CREATE EXTENSION "uuid-ossp";
 Check if it works with SELECT uuid_generate_v4();
 
-Setting up Github Secrets
-Secret for Docker username & password -> DB_USERNAME & DB_PASSWORD
-Secret for application.yml have to be in brackets -> APPLICATION_YML (should include datasource for db, resource server for jwt)
-Secret for firebase_config.json have to be in brackets -> FIREBASE_CONFIG (download from firebase admin sdk)
-Important!!!
-Firebase config should be in base64 format
+Setting up GitHub Secrets
+Secret for Docker username & password -> DOCKER_USERNAME & DOCKER_PASSWORD
+Secret for Database username & password -> DB_USERNAME & DB_PASSWORD
+Secret for Database url -> DB_URL
+Secret for firebase project ID -> FIREBASE_ID
+Secret for firebase_config.json (have to be in base64 format) -> FIREBASE_CONFIG (download from firebase admin sdk)
 
-app:
-    datasource:
-        jdbc-url: jdbc:postgresql://host.docker.internal:5432/demodb
-        username: username
-        password: Parola
-        pool-size: 30
-
-spring:
-    security:
-        oauth2:
-            resourceserver:
-                jwt:
-                    issuer-uri: https://securetoken.google.com/<FirebaseProjectID>
-                    jwk-set-uri: https://www.googleapis.com/robot/v1/metadata/jwk/securetoken@system.gserviceaccount.com
-
-While running the backend in container locally the url should be -> jdbc-url: jdbc:postgresql://host.docker.internal:5432/demodb
-When setting the env in intelij and running it should be -> jdbc-url: jdbc:postgresql://localhost:5432/demodb
+jdbc-url: jdbc:postgresql://host.docker.internal:5432/demodb
+jdbc-url: jdbc:postgresql://localhost:5432/demodb
 
