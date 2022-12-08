@@ -33,15 +33,10 @@ jobs:
           printf ${{ secrets.APPLICATION_YML }} >> src/main/resources/application.yml
         shell: bash
 
-      - name: Download firebase configuration
-        uses: wei/wget@v1
-        with:
-          args: --no-check-certificate 'https://docs.google.com/uc?export=download&id=${{ secrets.FIREBASE_CONFIG_ID }}' -O src/main/resources/config.7z
-
-      - name: Unarchive configuration
-        uses: edgarrc/action-7z@v1
-        with:
-          args: 7z x src/main/resources/config.7z -p${{ secrets.FIREBASE_CONFIG_PASSWORD }}
+      - name: Adding firebase configuration
+        run: |
+          printf ${{ secrets.FIREBASE_CONFIG }} >> src/main/resources/firebase_config.json
+        shell: bash
 
       - name: Build with Maven
         run: mvn clean install
