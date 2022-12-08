@@ -43,6 +43,7 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          enableBuildKit: true
           secrets: |
             "DB_URL=${{ secrets.DB_URL }}"
             "DB_USERNAME=${{ secrets.DB_USERNAME }}"
