@@ -43,16 +43,11 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          args: |
-            DB_URL_ARG=${{ secrets.DB_URL }}
-            DB_USERNAME_ARG=${{ secrets.DB_USERNAME }}
-            DB_PASSWORD_ARG=${{ secrets.DB_PASSWORD }}
-            FIREBASE_ID_ARG=${{ secrets.FIREBASE_ID }}
-          env: |
-            DB_URL_ARG=${{ secrets.DB_URL }}
-            DB_USERNAME_ARG=${{ secrets.DB_USERNAME }}
-            DB_PASSWORD_ARG=${{ secrets.DB_PASSWORD }}
-            FIREBASE_ID_ARG=${{ secrets.FIREBASE_ID }}
+          secrets: |
+            "DB_URL=${{ secrets.DB_URL }}"
+            "DB_USERNAME=${{ secrets.DB_USERNAME }}"
+            "DB_PASSWORD=${{ secrets.DB_PASSWORD }}"
+            "FIREBASE_ID=${{ secrets.FIREBASE_ID }}"
 
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
