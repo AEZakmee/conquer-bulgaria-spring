@@ -35,7 +35,7 @@ jobs:
         run: mvn clean install
 
       - name: Build & push Docker image
-        uses: docker/build-push-action@v3
+        uses: mr-smithers-excellent/docker-build-push@v5.7
         with:
           image: aezakme/conquer-bulgaria-deploy
           tags: latest
