@@ -14,6 +14,8 @@ Setting up Github Secrets
 Secret for Docker username & password -> DB_USERNAME & DB_PASSWORD
 Secret for application.yml have to be in brackets -> APPLICATION_YML (should include datasource for db, resource server for jwt)
 Secret for firebase_config.json have to be in brackets -> FIREBASE_CONFIG (download from firebase admin sdk)
+Important!!!
+Firebase config should be in base64 format
 
 app:
     datasource:
