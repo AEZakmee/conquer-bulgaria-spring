@@ -40,7 +40,7 @@ public class UserRepository implements UserDao {
 
     @Override
     public Optional<User> getUser(String uid) {
-        final String sql = "Select uid, name, email, lastLogin, bio FROM users WHERE uid = ?";
+        final String sql = "SELECT uid, name, email, lastLogin, bio FROM users WHERE uid = ?";
         return Optional.ofNullable((User) jdbcTemplate.queryForObject(
                 sql,
                 new Object[]{uid},

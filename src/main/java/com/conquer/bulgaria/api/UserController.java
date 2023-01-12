@@ -43,9 +43,9 @@ public class UserController {
         UserRecord userRecord = FirebaseAuth.getInstance().getUser(uid);
 
         User user = new User(
-                userRecord.getEmail(),
-                userBody.username(),
                 uid,
+                userBody.username(),
+                userRecord.getEmail(),
                 userRecord.getUserMetadata().getLastSignInTimestamp(),
                 userBody.bio());
 
