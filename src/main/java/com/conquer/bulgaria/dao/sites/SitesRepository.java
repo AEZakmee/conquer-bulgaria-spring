@@ -95,7 +95,7 @@ public class SitesRepository implements SitesDao {
                 new SiteCoordinates(Double.parseDouble(resultSet.getString("lat")),
                         Double.parseDouble(resultSet.getString("lng"))),
                 new SiteInformation(resultSet.getString("description"),
-                        resultSet.getString("name"),
+                        "някакуж ра",
                         resultSet.getString("town")),
                 new SiteRating(Integer.parseInt(resultSet.getString("ratingCount")),
                         Integer.parseInt(resultSet.getString("ratingTotal")))
